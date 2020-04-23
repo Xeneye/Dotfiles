@@ -1,0 +1,38 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system>					<mount point>		<type>		<options>			<dump>  <pass>
+/dev/mapper/xenstation--vg-root			/			ext4		errors=remount-ro		0	1
+UUID=8188b5e8-c4a4-4be0-b5ec-8755e7387d37	/boot			ext2		defaults			0	2
+UUID=0F1C-1E5A					/boot/efi		vfat		umask=0077			0	1
+/dev/mapper/xenstation--vg-home			/home			ext4		defaults			0	2
+/dev/mapper/xenstation--vg-tmp			/tmp			ext4		defaults			0	2
+/dev/mapper/xenstation--vg-var			/var			ext4		defaults			0	2
+/dev/mapper/xenstation--vg-swap_1		none			swap		sw				0	0
+UUID=5fcce0b4-058a-465a-9fcd-7e5e1e97b3d3	/mnt/Data		ext4		defaults,noatime,discard	0	3
+/mnt/Data/Documents				/home/xeneye/Documents	none		bind				0	0
+/mnt/Data/Music					/home/xeneye/Music	none		bind				0	0
+/mnt/Data/Pictures				/home/xeneye/Pictures	none		bind				0	0
+/mnt/Data/Scripts				/home/xeneye/Scripts	none		bind				0	0
+/mnt/Data/Temp					/home/xeneye/Temp	none		bind				0	0
+/mnt/Data/Videos				/home/xeneye/Videos	none		bind				0	0
+UUID=b06f70b4-c7bd-4f09-9237-648dfc922293	/mnt/Games		ext4		defaults,noatime,discard	0	3
+/mnt/Games					/home/xeneye/Games	none		bind				0	0
+UUID=e6c36021-6021-48ac-9183-8dcc9c1fcf93	/mnt/Vault		ext4		defaults,noatime,discard	0	3
+/mnt/Vault					/home/xeneye/Vault	none		bind				0	0
+192.168.1.100:/mnt/user/Backup			/mnt/Backup		nfs		rw,async,hard,intr,noexec	0	0
+
+
+#/mnt/UUID/Videos /home/$USER/Videos none bind     0 0
+#/mnt/UUID/Music  /home/$USER/Music  none bind     0 0
+#UUID=5262824A628232B1 /home/xeneye/XenDrive ntfs defaults,noatime 0 2
+#UUID=62EEFE23EEFDEF63 /mnt/Games-SSD ntfs defaults,noatime 0 2
+#UUID=2CB20904B208D46C /mnt/Games-HDD ntfs defaults,noatime 0 2
+#192.168.1.100:/mnt/user/Sync /mnt/Sync nfs defaults,noatime 0 0
+#192.168.1.100:/mnt/user/Temp /mnt/Temp nfs defaults,noatime 0 0
+#192.168.1.100:/mnt/user/Games /mnt/Games nfs defaults,noatime 0 0
+#192.168.1.100:/mnt/user/Music /home/xeneye/Music nfs defaults,noatime 0 2
+

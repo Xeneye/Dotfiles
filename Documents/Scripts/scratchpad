@@ -1,0 +1,44 @@
+
+
+nvidia-settings --assign CurrentMetaMode="DVI-I-1:1920x1080_60 +0+0 { ForceFullCompositionPipeline = On }, HDMI-0:1920x1080_60 +1920+0 { ForceFullCompositionPipeline = On }"
+
+
+> cat ~/scripts/nvidia.compositionpipeline.switch.sh 
+
+#!/bin/bash
+
+killall aosd_cat
+
+if nvidia-settings -t -q CurrentMetaMode|grep 'ForceCompositionPipeline=On' &>/dev/null ; then
+
+    ~/scripts/nvidia.compositionpipeline.disable.sh &
+
+    echo "FFCP=OFF" | aosd_cat -n "Sans Bold 15"  -x 0 -y 0 -p 0 -t 0 -b 255 -s 255 -d 10 -R yellow  -u 5000 &
+
+    echo "FFCP=OFF" | aosd_cat -n "Sans Bold 15"  -x 0 -y 0 -p 2 -t 0 -b 255 -s 255 -d 10 -R yellow  -u 5000 &
+
+        else
+
+    ~/scripts/nvidia.compositionpipeline.enable.sh &
+
+    echo "FFCP=ON" | aosd_cat -n "Sans Bold 15"   -x 0 -y 0 -p 0 -t 0 -b 255 -s 255 -d 10 -R "#99ccff"  -u 5000 &
+
+    echo "FFCP=ON" | aosd_cat -n "Sans Bold 15"   -x 0 -y 0 -p 2 -t 0 -b 255 -s 255 -d 10 -R "#99ccff"  -u 5000 &
+
+fi
+
+###########
+
+> cat ~/scripts/nvidia.compositionpipeline.disable.sh 
+
+#!/bin/bash
+
+sh -c "nvidia-settings --assign CurrentMetaMode=\"$(nvidia-settings -t -q CurrentMetaMode |tr -d "\n"|sed 's/.*:://'|sed 's/^ *//;s/ *$//'|sed "s/CompositionPipeline=On/CompositionPipeline=Off/g")\""
+
+###########
+
+> cat ~/scripts/nvidia.compositionpipeline.enable.sh 
+
+#/bin/bash
+
+sh -c "nvidia-settings --assign CurrentMetaMode=\"$(nvidia-settings -t -q CurrentMetaMode |tr -d "\n"|sed 's/ViewPortIn=/ForceFullCompositionPipeline=On, ViewPortIn=/g'|sed 's/.*:://'|sed 's/^ *//;s/ *$//')\""
