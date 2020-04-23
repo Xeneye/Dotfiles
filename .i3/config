@@ -99,6 +99,7 @@ bindsym $mod+$mod1+q exec quodlibet
 bindsym $mod+$mod1+h exec ghb %f
 bindsym $mod+$mod1+e exec ibus emoji
 bindsym $mod+$mod1+m exec /home/xeneye/.local/Plexamp/Plexamp-3.0.0.AppImage --no-sandbox
+bindsym $mod+$mod1+f exec filezilla
 
 # focus_follows_mouse no
 
