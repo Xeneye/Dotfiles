@@ -1,0 +1,11 @@
+# GIMP gimp-paintbrush-tool options
+
+(opacity 0.45200000000000001)
+(brush "2. Hardness 075")
+(dynamics "Dynamics Off")
+(gradient "FG to Transparent")
+(palette "Bgold")
+(brush-size 51)
+(brush-hardness 0.75)
+
+# end of gimp-paintbrush-tool options

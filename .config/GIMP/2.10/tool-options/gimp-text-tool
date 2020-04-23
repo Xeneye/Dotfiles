@@ -1,0 +1,6 @@
+# GIMP gimp-text-tool options
+
+(palette "Bgold")
+(font "Suburga 2 Condensed #1")
+
+# end of gimp-text-tool options

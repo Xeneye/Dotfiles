@@ -1,0 +1,14 @@
+# GIMP user context
+
+(tool "gimp-operation-tool")
+(paint-info "gimp-paintbrush")
+(brush "2. Hardness 075")
+(dynamics "Dynamics Off")
+(mybrush "100% Opaque")
+(pattern "Pine")
+(gradient "FG to Transparent")
+(palette "Bgold")
+(font "Suburga 2 Condensed #1")
+(tool-preset "Core Pointer")
+
+# end of user context
