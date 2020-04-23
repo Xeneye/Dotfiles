@@ -1,0 +1,420 @@
+neofetch
+neofetch
+j neo__
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+neofetch
+nano config.conf
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+cd
+neofetch
+neofetch | lolcat
+neofetch
+nano config.conf
+j neo__
+nano config.conf
+neofetch
+neofetch
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+neofetch
+neofetch
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+neofetch
+neofetch
+neofetch
+neofetch
+nano config.conf
+neofetch
+neofetch
+nano config.conf
+neofetch
+nano config.conf
+neofetch
+neofetch
+nano config.conf
+neofetch
+neofetch
+neofetch
+cd
+neofetch
+cmatrix
+yay -S noto-fonts-emoji
+exit
+sudo nano /etc/fonts/conf.d/02-emoji.conf
+yay -S ibus-uniemoji
+exit
+nano ~/.config/fontconfig/conf.d/01-emoji.conf
+mkdir -p ~/.config/fontconfig/conf.d/
+nano ~/.config/fontconfig/conf.d/01-emoji.conf
+ed-i3
+xprop
+ed-i3
+edi3
+ed-i3
+sudo pacman -Syu
+yay -Syu
+exit
+j dow
+sudo mv Plexamp /usr/bin
+cd
+Plexamp
+sudo Plexamp
+cd /usr/bin
+Plexamp
+sudo Plexamp
+ll
+cd
+Plexamp
+j bin__
+sudo rm Plexamp
+cd
+cd dow
+j dow
+chmod +x Plexamp-3.0.0.AppImage
+mv Plexamp-3.0.0.AppImage ~/.bins
+cd ~/.bins
+Plexamp
+Plexamp Plexamp-3.0.0.AppImage
+Plexamp-3.0.0.Appmage
+cd
+sudo updatedb
+locate pleaxamp
+locate Pleaxamp
+locate Plexamp
+cd .cache
+ll
+rm Plexamp
+rm -rf Plexamp
+cd
+locate Plexamp
+j conf
+ll
+rm -rf Plexamp
+cd
+ll
+locate Plexamp
+rm -rf ~/.bins
+ll
+locate Plexamp
+locate Plexamp
+j con__
+ll
+sudo updatedb
+locate Plexamp
+exit
+j do__
+Plexamp
+Plexamp-3.0.0.Appmage
+ll
+./Plexamp-3.0.0.AppImage
+cd /usr/share/grub/themes/Vimix
+ll
+sudo cp background.jpg ~/Downloads
+sudo mv background.jpg background.jpg.BAK
+sudo cp ~/Downloads/background.jpg /usr/share/grub/themes/Vimix/background.jpg
+ll
+sudo chown xeneye:xeneye background.jpg
+ll
+j Vi
+ll
+sudo su
+j Vi__
+ll
+sudo su
+sudo alsactl store
+exit
+sudo updatedb
+locate Plexamp
+j .con__
+rm -rf Plexamp
+locate plexamp
+cd
+j Do__
+ll
+sudo mv plexamp /usr/bin
+cd
+plexamp --disable-seccomp-filter-sandbox
+sudo pacman -Syu
+yay -Syu
+j Do__
+touch plexmap.sh
+nano plexmap.sh
+ll
+chmod +x plexmap.sh
+plexamp
+ll
+./plexmap.sh
+ed-i3
+xprop
+xprop
+ed-i3
+cj do
+j do
+ll
+./plexmap.sh
+exit
+ed-i3
+sudo pacman -Syu
+yay -Syu
+exit
+sudo pacman -Syu
+zshrc
+aliasrc
+exit
+aliasrc
+zzfup
+zzmup
+zzpup
+zzyup
+aliasrc
+aliasrc
+zzdup
+zzdup
+locate plex
+locate plexamp
+locate Plexamp
+zzdup
+locate Plexamp
+locate plexamp
+sudo rm /usr/bin/plexamp
+zzdup
+locate plexamp
+locate Plexamp
+cat ~/.local/share/applications/plexamp.desktop
+touch ~/.local/share/applications/plexamp.desktop
+cat ~/.local/share/applications/plexamp.desktop
+nano ~/.local/share/applications/plexamp.desktop
+cd ~/.local/Plexamp
+ll
+./Plexamp-3.0.0.AppImage --appimage-extract
+sudo ./Plexamp-3.0.0.AppImage --appimage-extract
+chmod +x ~/.local/Plexamp-3.0.0.AppImage
+cd ~/.local
+ll
+cd Plexamp
+ll
+chmod +x Plexamp-3.0.0.AppImage
+nano ~/.local/share/applications/plexamp.desktop
+sudo alsactl store
+exit
+ed-i3
+zzdup
+locate Plex
+xprop
+nano ~/.local/share/applications/plexamp.desktop
+locate terminfo
+zshrc
+zshrc
+ll
+cat .zsh_history
+zshrc
+neofetch
+cmatrix
+ed-i3
+pup
+zzpup
+zzyup
+htop
+ed-i3
+zzpup
+zzpup
+zzpup
+zzpup
+zzyup
+exit
+neofetch
+ed-i3
+RemoteStation
+GeekStation
+exit
+exit
+zshrc
+history
+history --help
+history -20
+zshrc
+zshrc
+cd pic
+zshrc
+cd Pictures
+ll
+cd Affinity\ 
+cd Affinity\ Templates
+ll
+cd.
+j pic__
+ll
+cd Images
+ll
+exit
+zshrc
+ll
+git init --bare $HOME/.cfg
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+config config --local status.showUntrackedFiles no
+zshrc
+echo "alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'" >> $HOME/.zsh/aliasrc
+aliasrc
+config status
+config add .zshrc
+config commit -m "Add zshrc"
+git config --global user.email "paul@xeneye.com"
+git config --global user.name "Paul Fowler"
+config commit -m "Add zshrc"
+config status
+config add .aliasrc
+config add /.zsh/.aliasrc
+config add ~/.zsh/.aliasrc
+config add aliasrc
+config add ~/.zsh/aliasrc
+config commit -m "Add aliasrc"
+config status
+config push
+git remote add dotfiles https://github.com/xeneye/
+git remote add Xeneye https://github.com/xeneye/
+git remote add dotfiles https://github.com/xeneye/
+git remote add dotfiles https://github.com/Xeneye/dotfiles
+git remote add Xeneye https://github.com/Xeneye/dotfiles
+ll
+cd .ssh
+ll
+nano id_rsa.pub
+nano id_rsa.pub$
+nano id_rsa.pub $
+nano id_rsa.pub
+code id_rsa.pub
+git remote add dotfiles git@github.com:Xeneye/dotfiles.git
+git remote add mydotfiles git@github.com:Xeneye/dotfiles.git
+sudo git remote add dotfiles git@github.com:Xeneye/dotfiles.git
+git init
+git remote add dotfiles git@github.com:Xeneye/dotfiles.git
+git remote -v
+config push
+git push dotfiles
+git push git@github.com:Xeneye/dotfiles.git
+git push --set-upstream git@github.com:Xeneye/dotfiles.git master
+config push
+config push dotfiles
+config push --set-upstream dotfiles master
+config push --set-upstream https://github.com/Xeneye/dotfiles master
+config push --set-upstream https://github.com/Xeneye/dotfiles master
+git pull
+cd
+config push
+config remote add dotfiles git@github.com:Xeneye/dotfiles.git
+config push
+config push dotfiles
+config push --set-upstream dotfiles master
+config pull
+config pull git@github.com:Xeneye/dotfiles.git master
+config push dotfiles
+config push --set-upstream dotfiles master
+config pull git@github.com:Xeneye/dotfiles.git master
+config pull git@github.com:Xeneye/dotfiles.git dotfiles master
+cd
+zzpup
+zzyup
+exit
+: 1587638831:0;cd ~/.cfg
+: 1587638832:0;ll
+: 1587638863:0;config init .
+: 1587638882:0;ls -a
+: 1587638892:0;ll
+: 1587638902:0;config status
+: 1587638963:0;config status -u
+: 1587639070:0;cd
+: 1587639100:0;config add .zshrc
+: 1587639141:0;config commit -m "Added zshrc"
+: 1587639157:0;config push
+: 1587639222:0;config log
+: 1587639298:0;config add ~/.zsh/aliasrc
+: 1587639312:0;config commit -m "Added aliasrc"
+: 1587639315:0;config log
+: 1587639323:0;config status -u
+: 1587639329:0;config status
+: 1587639544:0;config remote add origin git@github.com:Xeneye/dotfiles.git
+: 1587639598:0;config push -u origin master
+: 1587639715:0;config push
+: 1587639945:0;ll
+: 1587639977:0;config add .alsoftrc
+: 1587639993:0;config commit -m "Added alsoftrc"
+: 1587640036:0;config add .bashrc
+: 1587640049:0;config commit -m "Added bashrc"
+: 1587640160:0;config add .i3status.conf
+: 1587640175:0;config commit -m "Added i3status"
+: 1587640204:0;config add ~/.i3
+: 1587640216:0;config commit -m "Added i3 config"
+: 1587640236:0;config add .dir_colors
+: 1587640263:0;config commit -m "Added dir_colors"
+: 1587640270:0;config add .dmenurc
+: 1587640285:0;config commit -m "Added dmenurc"
+: 1587640292:0;nano .dmrc
+: 1587640316:0;config add .dmrc
+: 1587640324:0;config commit -m "Added dmrc"
+: 1587640367:0;config add .p10k.zsh
+: 1587640384:0;config commit -m "Added p10k.zsh"
+: 1587640403:0;config add .profile
+: 1587640410:0;config commit -m "Added profile"
+: 1587640444:0;config add .Xresources
+: 1587640456:0;config commit -m "Added Xresources"
+: 1587640469:0;config push
+: 1587640535:0;rm ~/.i3/config\[BAK\]
+: 1587640556:0;config add ~/.i3
+: 1587640597:0;config commit -m "Deleted i3 config[BAK]"
+: 1587640600:0;config push
+: 1587640833:0;j .zsh
+: 1587640834:0;ll
+: 1587640840:0;cd pure
+: 1587640844:0;ll
+: 1587640867:0;cd
+: 1587640873:0;cd ~/.cfg
+: 1587640875:0;ll
+: 1587640879:0;cd
+: 1587640891:0;ll
+: 1587640914:0;cd .cache
+: 1587640916:0;ll
+: 1587640927:0;cd zsh
+: 1587640928:0;ll
+: 1587640934:0;nano history
+: 1587641002:0;config add ~/.cache/zsh/
