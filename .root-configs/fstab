@@ -1,0 +1,10 @@
+UUID=3DDB-12B6					/boot/efi		vfat	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,utf8,errors=remount-ro	0	0
+UUID=82bf7766-f416-439d-8223-bc2dcaef735e	/			btrfs	rw,noatime,compress=lzo,ssd,space_cache,commit=120,subvol=@							0	0
+UUID=82bf7766-f416-439d-8223-bc2dcaef735e	/home			btrfs	rw,noatime,compress=lzo,ssd,space_cache,commit=120,subvol=@home							0	0
+UUID=97f0c943-d2e2-4658-8318-e6f067cae455	none			swap	defaults,pri=-2													0	0
+tmpfs						/tmp			tmpfs	rw,nodev,nosuid													0	0
+/dev/disk/by-uuid/4C4A71AF4A719704		/mnt/4C4A71AF4A719704	auto	nosuid,nodev,nofail,noauto											0	0
+/dev/disk/by-uuid/7E7C332D7C32DF97		/mnt/7E7C332D7C32DF97	auto	nosuid,nodev,nofail,noauto											0	0
+/dev/disk/by-uuid/442C405E2C404D5C		/mnt/442C405E2C404D5C	auto	nosuid,nodev,nofail,noauto											0	0
+/dev/disk/by-uuid/62604FE3604FBD13		/mnt/62604FE3604FBD13	auto	nosuid,nodev,nofail,noauto											0	0
+/dev/disk/by-uuid/72C278A6C2787069		/mnt/72C278A6C2787069	auto	nosuid,nodev,nofail,noauto											0	0
