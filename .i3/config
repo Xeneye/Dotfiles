@@ -1,4 +1,4 @@
-##   $$\   $$\                                                        $$\  $$$$$$\
+#   $$\   $$\                                                        $$\  $$$$$$\
 #   $$ |  $$ |                                                       \__|$$ ___$$\
 #   \$$\ $$  |$$$$$$\  $$$$$$$\   $$$$$$\  $$\   $$\  $$$$$$\        $$\ \_/   $$ |
 #    \$$$$  /$$  __$$\ $$  __$$\ $$  __$$\ $$ |  $$ |$$  __$$\       $$ |  $$$$$ /
@@ -37,8 +37,7 @@ font xft:Fira Sans 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
-bindsym $mod+Shift+Return exec urxvt -name float_term
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -64,29 +63,26 @@ bindsym $mod+Ctrl+m exec pavucontrol
 ################################################################################################
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminator -e 'bmenu'
+bindsym $mod+Ctrl+b exec alacritty -e 'bmenu'
 bindsym $mod+F1 exec pcmanfm
 bindsym $mod+Shift+F1 exec gksu pcmanfm
 bindsym $mod+F2 exec google-chrome-stable
 bindsym $mod+Shift+F2 exec firefox
 bindsym $mod+F3 exec thunderbird
 bindsym $mod+F4 exec discord; exec telegram-desktop
-bindsym $mod+F5 exec /home/xeneye/.local/Plexamp/Plexamp-3.0.0.AppImage --no-sandbox
+#bindsym $mod+F5 exec /home/xeneye/.local/Plexamp/Plexamp-3.0.0.AppImage --no-sandbox
 bindsym $mod+$mod1+x exec firefox --args -private-window 'https://xhamster.com'
 bindsym $mod+$mod1+n exec google-chrome-stable --args 'https://netflix.com'
 bindsym $mod+$mod1+p exec google-chrome-stable --args 'http://192.168.1.100:32400'
 bindsym $mod+$mod1+Insert exec google-chrome-stable --args 'https://keep.google.com'
 #bindsym $mod+F5 exec terminal -e 'mocp'
 ### bindsym $mod+F8 exec steam
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym $mod+Shift+p exec pamac-manager
 bindsym Print exec --no-startup-id ~/Documents/Scripts/screenshot.sh
 #bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Start Specific Applications
@@ -157,9 +153,6 @@ bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
 # Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:
 set $ws1 1:1   
 set $ws2 2:2   
 set $ws3 3:3   
@@ -258,8 +251,6 @@ for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="Simplenote"] move scratchpad
 for_window [class="Nvidia-settings"] floating enable
-for_window [class="URxvt" instance="float_term"] floating enable resize set 1600 900, move absolute position center
-for_window [class="URxvt" instance="float_term"] move scratchpad
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -312,13 +303,13 @@ mode "resize" {
 bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
-#exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 #exec --no-startup-id rslsync
-exec --no-startup-id kdeconnect-indicator
+#exec --no-startup-id kdeconnect-indicator
 exec_always --no-startup-id caffeine
 exec --no-startup-id autokey-gtk
 #exec_always --no-startup-id ckb-next -b
-exec_always --no-startup-id urxvt -name float_term
+#exec_always --no-startup-id urxvt -name float_term
 #exec_always --no-startup-id simplenote
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
@@ -368,37 +359,37 @@ set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-	i3bar_command i3bar
-	status_command i3status
-	position bottom
+##bar {
+##	i3bar_command i3bar
+##	status_command i3status
+##	position bottom
 
 # please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
 #	tray_output eDP1
 
-	bindsym button4 workspace prev_on_output
-	bindsym button5 workspace next_on_output
+##	bindsym button4 workspace prev_on_output
+##	bindsym button5 workspace next_on_output
 
 #   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
+##	strip_workspace_numbers yes
 
-    colors {
-        background #383C4A ##arc0 ##Black
-        statusline #ECEFF4 ##nord6 ##White
-        separator  #4C566A ##nord3 ##Light Black
+##    colors {
+##        background #383C4A ##arc0 ##Black
+##        statusline #ECEFF4 ##nord6 ##White
+##        separator  #4C566A ##nord3 ##Light Black
 
 #				border	backgr.	text
-        focused_workspace	#ECEFF4	#5E81AC	#ECEFF4
-        active_workspace	#4C566A	#383C4A	#E5E9F0
-        inactive_workspace	#4C566A	#383C4A	#E5E9F0
-        binding_mode		#ECEFF4	#BF616A	#ECEFF4
-        urgent_workspace	#ECEFF4	#E5E9F0	#BF616A
-    }
-}
+##        focused_workspace	#ECEFF4	#5E81AC	#ECEFF4
+##        active_workspace	#4C566A	#383C4A	#E5E9F0
+##        inactive_workspace	#4C566A	#383C4A	#E5E9F0
+##        binding_mode		#ECEFF4	#BF616A	#ECEFF4
+##        urgent_workspace	#ECEFF4	#E5E9F0	#BF616A
+##    }
+##}
 
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+##bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
