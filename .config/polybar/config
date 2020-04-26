@@ -1,0 +1,649 @@
+#  $$\   $$\                                                       
+#  $$ |  $$ |                                                      
+#  \$$\ $$  | $$$$$$\  $$$$$$$\   $$$$$$\  $$\   $$\  $$$$$$\      
+#   \$$$$  / $$  __$$\ $$  __$$\ $$  __$$\ $$ |  $$ |$$  __$$\     
+#   $$  $$<  $$$$$$$$ |$$ |  $$ |$$$$$$$$ |$$ |  $$ |$$$$$$$$ |    
+#  $$  /\$$\ $$   ____|$$ |  $$ |$$   ____|$$ |  $$ |$$   ____|    
+#  $$ /  $$ |\$$$$$$$\ $$ |  $$ |\$$$$$$$\ \$$$$$$$ |\$$$$$$$\     
+#  \__|  \__| \_______|\__|  \__| \_______| \____$$ | \_______|    
+#                                          $$\   $$ |              
+#                                          \$$$$$$  |              
+#                                            \______/               
+#   $$$$$$$\            $$\           $$\                           
+#  $$  __$$\           $$ |          $$ |                          
+#  $$ |  $$ | $$$$$$\  $$ |$$\   $$\ $$$$$$$\   $$$$$$\   $$$$$$\  
+#  $$$$$$$  |$$  __$$\ $$ |$$ |  $$ |$$  __$$\  \____$$\ $$  __$$\ 
+#  $$  ____/ $$ /  $$ |$$ |$$ |  $$ |$$ |  $$ | $$$$$$$ |$$ |  \__|
+#  $$ |      $$ |  $$ |$$ |$$ |  $$ |$$ |  $$ |$$  __$$ |$$ |      
+#  $$ |      \$$$$$$  |$$ |\$$$$$$$ |$$$$$$$  |\$$$$$$$ |$$ |      
+#  \__|       \______/ \__| \____$$ |\_______/  \_______|\__|      
+#                          $$\   $$ |                              
+#                          \$$$$$$  |                              
+#                           \______/                               
+
+################################################################################
+
+[global/wm]
+;https://github.com/jaagr/polybar/wiki/Configuration#global-wm-settings
+margin-top = 0
+margin-bottom = 0
+
+[settings]
+;https://github.com/jaagr/polybar/wiki/Configuration#application-settings
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
+screenchange-reload = true
+compositing-background = over
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+
+; Define fallback values used by all module formats
+format-foreground = #E5E9F0
+format-background = #383C4A
+format-underline = 
+format-overline =
+format-spacing =
+format-padding =
+format-margin =
+format-offset =
+
+[colors]
+background-a = #383C4A
+background-b = #383C4A
+foreground-a = #E5E9F0
+foreground-b = #C4C7CC
+module-a = #5D90C4
+module-b = #81A1C1
+alert-a = #C23D4A
+alert-b = #BF616A
+
+################################################################################
+################################################################################
+############                         MAINBAR-I3                     ############
+################################################################################
+################################################################################
+
+[bar/mainbar-i3]
+;https://github.com/jaagr/polybar/wiki/Configuration
+
+monitor = DP-2
+monitor-strict = true
+override-redirect = false
+bottom = true
+fixed-center = true
+width = 100%
+height = 20
+;offset-x = 1%
+;offset-y = 1%
+
+background = ${colors.background-a}
+foreground = ${colors.foreground-b}
+
+radius = 0.0
+line-size = 0
+line-color = #000000
+
+border-size = 0
+border-left-size = 5
+border-right-size = 5
+border-top-size = 0
+border-bottom-size = 5
+;border-color = #000000
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left = 0
+module-margin-right = 0
+
+;https://github.com/jaagr/polybar/wiki/Fonts
+font-0 = "Fira Sans:style=Regular:size=11;2"
+font-1 = "NotoSansMono Nerd Font:style=Regular:size=11;3"
+;font-2 = "MesloLGS NF:style=Mono:size=16;2"
+;font-3 = "MesloLGS NF:style=Regular:pixelsize=8;2"
+;font-4 = "MesloLGS NF:style=Regular:pixelsize=8;2"
+
+modules-left = i3 xwindow
+modules-center = mpd
+modules-right = arrow3 networkspeedup networkspeeddown arrow2 filesystem arrow1 memory arrow2 cpu arrow1 date arrow5
+
+separator = 
+
+;dim-value = 1.0
+
+tray-position = right
+tray-detached = false
+tray-maxsize = 20
+tray-background = ${colors.background-a}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 4
+tray-scale = 1.0
+
+#i3: Make the bar appear below windows
+;wm-restack = i3
+;override-redirect = true
+
+; Enable support for inter-process messaging
+; See the Messaging wiki page for more details.
+enable-ipc = true
+
+; Fallback click handlers that will be called if
+; there's no matching module handler found.
+click-left =
+click-middle =
+click-right =
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+double-click-left =
+double-click-middle =
+double-click-right =
+
+; Requires polybar to be built with xcursor support (xcb-util-cursor)
+; Possible values are:
+; - default   : The default pointer as before, can also be an empty string (default)
+; - pointer   : Typically in the form of a hand
+; - ns-resize : Up and down arrows, can be used to indicate scrolling
+cursor-click = pointer
+cursor-scroll =
+
+################################################################################
+################################################################################
+############                       MODULE I3                        ############
+################################################################################
+################################################################################
+
+[module/i3]
+;https://github.com/jaagr/polybar/wiki/Module:-i3
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = false
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = false
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = false
+
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = true
+
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = false
+
+; ws-icon-[0-9]+ = <label>;<icon>
+; NOTE: The <label> needs to match the name of the i3 workspace
+; Neither <label> nor <icon> can contain a semicolon (;)
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+#ws-icon-default = ♟
+; NOTE: You cannot skip icons, e.g. to get a ws-icon-6
+; you must also define a ws-icon-5.
+; NOTE: Icon will be available as the %icon% token inside label-*
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-foreground = ${colors.foreground-a}
+label-mode-background = ${colors.alert-b}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %name%
+label-focused-foreground = ${colors.foreground-a}
+label-focused-background = ${colors.module-a}
+label-focused-underline = ${colors.module-a}
+label-focused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-unfocused = %name%
+label-unfocused-foreground = ${colors.foreground-b}
+label-unfocused-background = ${colors.background-a}
+label-unfocused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = %name%
+label-visible-underline = ${colors.module-a}
+label-visible-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-urgent = %name%
+label-urgent-foreground = ${colors.alert-b}
+label-urgent-background = ${colors.foreground-a}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+label-separator = |
+label-separator-padding = 0
+label-separator-foreground = ${colors.foreground-b}
+
+################################################################################
+################################################################################
+############                     MODULES ARROWS                     ############
+################################################################################
+################################################################################
+
+[module/arrow1]
+; Blue 4 to Blue 12
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.module-a}
+content-background = ${colors.module-b}
+
+[module/arrow2]
+; Blue 12 to Blue 4
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.module-b}
+content-background = ${colors.module-a}
+
+[module/arrow3]
+; Blue 4 to Grey
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.module-a}
+content-background = ${colors.background-a}
+
+[module/arrow4]
+; Blue 12 to Grey
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.module-b}
+content-background = ${colors.background-a}
+
+[module/arrow5]
+; Grey to Blue 12
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.background-a}
+content-background = ${colors.module-a}
+
+[module/arrow6]
+; Grey to Blue 12
+type = custom/text
+content = "%{T2} %{T-}"
+content-font = 2
+content-foreground = ${colors.background-a}
+content-background = ${colors.module-b}
+
+################################################################################
+################################################################################
+###############                    MODULES A-Z                      ############
+################################################################################
+################################################################################
+
+[module/cpu]
+;https://github.com/jaagr/polybar/wiki/Module:-cpu
+type = internal/cpu
+; Seconds to sleep between updates
+; Default: 1
+interval = 1
+format-prefix = ""
+format-prefix-padding = 2
+format-prefix-foreground = ${colors.foreground-a}
+format-foreground = ${colors.foreground-a}
+format-background = ${colors.module-b}
+
+label-font = 1
+
+; Available tags:
+;   <label> (default)
+;   <bar-load>
+;   <ramp-load>
+;   <ramp-coreload>
+format = <label>
+
+
+; Available tokens:
+;   %percentage% (default) - total cpu load
+;   %percentage-cores% - load percentage for each core
+;   %percentage-core[1-9]% - load percentage for specific core
+label = CPU:  %percentage:3%%
+
+################################################################################
+
+[module/date]
+;https://github.com/jaagr/polybar/wiki/Module:-date
+type = internal/date
+; Seconds to sleep between updates
+interval = 5
+; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
+; NOTE: if you want to use syntax tags here you need to use %%{...}
+date = " %A %d %B,"
+;date-alt = " %a %b %d, %Y"
+time = "%l:%M %p"
+;time-alt = %l:%M%P
+format-prefix = ""
+format-prefix-padding = 2
+format-prefix-foreground = ${colors.foreground-a}
+format-foreground = ${colors.foreground-a}
+format-background = ${colors.module-a}
+label = "%date% %time% "
+
+################################################################################
+
+[module/filesystem]
+;https://github.com/jaagr/polybar/wiki/Module:-filesystem
+type = internal/fs
+
+; Mountpoints to display
+mount-0 = /
+;mount-1 = /home
+;mount-2 = /var
+
+; Seconds to sleep between updates
+; Default: 30
+interval = 30
+
+; Display fixed precision values
+; Default: false
+fixed-values = false
+
+; Spacing between entries
+; Default: 2
+spacing = 4
+
+; Available tags:
+;   <label-mounted> (default)
+;   <bar-free>
+;   <bar-used>
+;   <ramp-capacity>
+format-mounted = <label-mounted>
+format-mounted-foreground = ${colors.foreground-a}
+format-mounted-background = ${colors.module-b}
+format-mounted-underline = ${colors.foreground-a}
+
+; Available tokens:
+;   %mountpoint%
+;   %type%
+;   %fsname%
+;   %percentage_free%
+;   %percentage_used%
+;   %total%
+;   %free%
+;   %used%
+; Default: %mountpoint% %percentage_free%%
+label-mounted-padding = 2
+label-mounted =   SSD:  %percentage_used%%
+
+; Available tokens:
+;   %mountpoint%
+; Default: %mountpoint% is not mounted
+label-unmounted = %mountpoint% not mounted
+format-unmounted-foreground = ${colors.foreground-b}
+format-unmounted-background = ${colors.background-a}
+;format-unmounted-underline = ${colors.alert}
+
+################################################################################
+
+[module/memory]
+;https://github.com/jaagr/polybar/wiki/Module:-memory
+type = internal/memory
+interval = 1
+; Available tokens:
+;   %percentage_used% (default)
+;   %percentage_free%
+;   %gb_used%
+;   %gb_free%
+;   %gb_total%
+;   %mb_used%
+;   %mb_free%
+;   %mb_total%
+label = %percentage_used:3%%
+
+format = RAM: <label>
+format-prefix = ""
+format-prefix-padding = 2
+format-prefix-foreground = ${colors.foreground-a}
+format-foreground = ${colors.foreground-a}
+format-background = ${colors.module-a}
+
+################################################################################
+
+[module/mpd]
+;https://github.com/jaagr/polybar/wiki/Module:-mpd
+type = internal/mpd
+host = 192.168.1.10
+port = 6600
+format-online =  "<label-song>   <icon-prev>  <icon-stop>  <toggle>  <icon-next>"
+;format-online =  "<label-song>  <bar-progress>"
+;format-online =  "<label-song>  <bar-progress> <icon-prev>  <icon-stop>  <toggle>  <icon-next>"
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+label-song-maxlen = 100
+label-song-ellipsis = true
+bar-progress-width = 10
+bar-progress-indicator = 
+bar-progress-fill = 
+bar-progress-empty = 
+bar-progress-fill-foreground = #ff0
+bar-progress-fill-background = ${colors.background-a}
+bar-progress-indicator-foreground = ${colors.foreground-b}
+format-online-foreground = ${colors.foreground-b}
+format-online-background = ${colors.background-a}
+interval = 1
+
+################################################################################
+
+[module/networkspeedup]
+;https://github.com/jaagr/polybar/wiki/Module:-network
+type = internal/network
+interface = enp5s0
+label-connected = "%upspeed:7%"
+format-connected = <label-connected>
+format-connected-prefix = "    "
+format-connected-prefix-foreground = ${colors.foreground-a}
+format-connected-foreground = ${colors.foreground-a}
+format-connected-background = ${colors.module-a}
+
+################################################################################
+
+[module/networkspeeddown]
+;https://github.com/jaagr/polybar/wiki/Module:-network
+type = internal/network
+interface = enp5s0
+label-connected = "%downspeed:7%"
+format-connected = <label-connected>
+format-connected-prefix = "      "
+format-connected-prefix-foreground = ${colors.foreground-a}
+format-connected-foreground = ${colors.foreground-a}
+format-connected-background = ${colors.module-a}
+
+################################################################################
+
+[module/xwindow]
+;https://github.com/jaagr/polybar/wiki/Module:-xwindow
+type = internal/xwindow
+
+; Available tokens:
+;   %title%
+; Default: %title%
+label = %title%
+label-maxlen = 50
+
+format-prefix = " "
+format-prefix-padding=2
+format-foreground = ${colors.foreground-b}
+format-background = ${colors.background-a}
+
+###############################################################################
+
+[module/sep]
+; alternative separator
+type = custom/text
+content = 
+content-foreground = ${colors.foreground-b}
+content-background =  ${colors.background-a}
+format-foreground = ${colors.foreground-b}
+format-background = ${colors.background-a}
+
+################################################################################
+
+[module/volume]
+;https://github.com/jaagr/polybar/wiki/Module:-volume
+type = internal/volume
+format-volume = "<label-volume>  <bar-volume>"
+
+label-volume = " "
+label-volume-foreground = #40ad4b
+label-muted = muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #40ad4b
+bar-volume-foreground-1 = #40ad4b
+bar-volume-foreground-2 = #40ad4b
+bar-volume-foreground-3 = #40ad4b
+bar-volume-foreground-4 = #40ad4b
+bar-volume-foreground-5 = #40ad4b
+bar-volume-foreground-6 = #40ad4b
+bar-volume-gradient = false
+bar-volume-indicator = 
+bar-volume-indicator-font = 2
+bar-volume-fill = 
+bar-volume-fill-font = 2
+bar-volume-empty = 
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-b}
+format-volume-foreground = ${colors.foreground-b}
+format-volume-background = ${colors.background-a}
+format-muted-prefix = "  "
+format-muted-prefix-foreground = "#ff0000"
+format-muted-foreground = ${colors.foreground-b}
+format-muted-background = ${colors.background-a}
+
+################################################################################
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+exec = $HOME/Documents/Scripts/pavolume.sh --listen
+click-right = exec pavucontrol
+click-left = pavolume.sh --togmute
+scroll-up = pavolume.sh --up
+scroll-down = pavolume.sh --down
+format-foreground = ${colors.foreground-a}
+format-background = ${colors.module-a}
+
+################################################################################
+
+[module/ewmh]
+type = internal/xworkspaces
+
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+reverse-scroll = true
+
+;extra icons to choose from
+;http://fontawesome.io/cheatsheet/
+;       v     
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-5 = 6;
+icon-6 = 7;
+icon-7 = 8;
+#icon-8 = 9;
+#icon-9 = 10;
+#icon-default = " "
+format = <label-state>
+label-monitor = %name%
+
+label-active = %name%
+label-active-foreground = ${colors.foreground-b}
+label-active-background = ${colors.background-a}
+label-active-underline= #6790eb
+label-active-padding = 1
+
+label-occupied = %name%
+label-occupied-background = ${colors.background-a}
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.foreground-b}
+label-urgent-background = ${colors.alert}
+label-urgent-underline = ${colors.alert}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-b}
+label-empty-padding = 1
+format-foreground = ${colors.foreground-b}
+format-background = ${colors.background-a}
+
+################################################################################
+
+# vim:ft=dosini
