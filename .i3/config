@@ -70,7 +70,7 @@ bindsym $mod+F2 exec google-chrome-stable
 bindsym $mod+Shift+F2 exec firefox
 bindsym $mod+F3 exec thunderbird
 bindsym $mod+F4 exec discord; exec telegram-desktop
-bindsym $mod+F5 exec alacritty -t 'music' -e 'ncmpcpp'
+bindsym $mod+F5 exec alacritty -t 'Music' -e 'ncmpcpp'
 #bindsym $mod+F5 exec /home/xeneye/.local/Plexamp/Plexamp-3.0.0.AppImage --no-sandbox
 bindsym $mod+$mod1+x exec firefox --args -private-window 'https://xhamster.com'
 bindsym $mod+$mod1+n exec google-chrome-stable --args 'https://netflix.com'
@@ -95,7 +95,7 @@ bindsym $mod+$mod1+a exec audacity
 bindsym $mod+$mod1+q exec quodlibet
 bindsym $mod+$mod1+h exec ghb %f
 bindsym $mod+$mod1+e exec ibus emoji
-bindsym $mod+$mod1+m exec alacritty -t 'music' -e 'ncmpcpp'
+bindsym $mod+$mod1+m exec alacritty -t 'Music' -e 'ncmpcpp'
 #bindsym $mod+$mod1+m exec /home/xeneye/.local/Plexamp/Plexamp-3.0.0.AppImage --no-sandbox
 bindsym $mod+$mod1+f exec filezilla
 
@@ -206,7 +206,7 @@ assign [class="Telegram"] $ws4
 assign [class="Plexamp"] $ws5
 assign [class="Quodlibet"] $ws5
 assign [class="Audacity"] $ws5
-assign [title="music"] $ws5
+assign [title="Music"] $ws5
 assign [class="Gimp"] $ws6
 #assign [class="Inkscape"] $ws6
 #assign [class="krita"] $ws6
@@ -306,7 +306,7 @@ mode "resize" {
 bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
-#exec_always --no-startup-id alacritty -t 'music' -e 'ncmpcpp'
+#exec_always --no-startup-id alacritty -t 'Music' -e 'ncmpcpp'
 exec_always --no-startup-id ~/.config/polybar/launch.sh &
 #exec --no-startup-id rslsync
 #exec --no-startup-id kdeconnect-indicator
